@@ -74,6 +74,11 @@ section {
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
         overflow: hidden;
 
+        #mobile-img {
+          width: 100%;
+          height: 100%;
+        }
+
         #home-background {
             display: flex;
             flex-direction: column;
@@ -137,13 +142,8 @@ section {
                     height: 50px;
                     margin-top: 36px;
                     border-radius: 100px;
-                    border-left: none;
-                    border-right: none;
                     background: linear-gradient(90deg, #f1528c 0%, #9B36B4 100%);
                     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-                    border-top: 4px solid transparent;
-                    border-bottom: 4px solid transparent;
-                    border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) ) 5;
 
                     img {
                       height: 20px;
@@ -164,6 +164,14 @@ section {
 
 button, a { cursor: pointer; }
 
+.button-borders {
+  border-left: none;
+  border-right: none;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) ) 5;
+}
+
 .text-detail {
   background-image: linear-gradient(96.73deg, #D44176 3.15%, #9B36B4 48.7%);
   background-clip: text;
@@ -175,9 +183,50 @@ button, a { cursor: pointer; }
 @media screen and (max-width:768px) {
   #home #home-img {
     border-radius: 0;
+    background-image: none;
 
-    #home-background #home-top img {
-      height: 40px;
+    #mobile-img {
+      background-image: url("img/woman.png");
+      background-size: 220%;
+      background-repeat: no-repeat;
+      background-position-x: -50px;
+      background-position-y: -70px;
+
+      #home-background {
+        background: rgba(255, 255, 255, 0.5);
+
+        #home-top img {
+          height: 40px;
+        }
+
+        #home-content {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          div:first-child div {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+    
+            h1 {
+              font-size: 1.4em;
+            }
+    
+            p {
+              font-size: 0.7em;
+            }
+    
+            button {
+              width: 200px;
+              height: 50px;
+            }
+          }
+          div:last-child {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
