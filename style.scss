@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@font-face {
+  font-family: 'PitangaTestRegular';
+  src: url('fonts/PitangaTestRegular.ttf') format('ttf');
+}
+
+$font-01: 'Playfair Display', Verdana, Geneva, Tahoma, sans-serif;
+$font-02: 'PitangaTestRegular', Verdana, Geneva, Tahoma, sans-serif;
+
 *, *::before, *::after {
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 * {
@@ -9,6 +18,7 @@
 
 body {
     box-sizing: border-box;
+    font-family: $font-01;
 }
 
 section {
@@ -23,9 +33,10 @@ section {
       position: absolute;
       background: linear-gradient(140deg, rgb(247, 145, 162) 22%, rgba(255,224,224,1) 100%);
       top: 70px;
-      left: 20px;
+      left: -150px;
       padding: 18px;
       border-radius: 8px;
+      transition: left 0.5s ease-in-out;
 
       ul {
         display: flex;
@@ -88,7 +99,60 @@ section {
             }
 
             #home-content {
-                height: 90%;
+              display: flex;
+              height: 90%;
+
+              div:first-child {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                div {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  padding-left: 300px;
+
+                  h1 {
+                    font-size: 2em;
+                    padding-bottom: 24px;
+                  }
+
+                  p {
+                    font-size: 0.9em;
+                    font-family: $font-02;
+                  }
+
+                  button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 12px;
+                    font-family: $font-02;
+                    font-weight: 400;
+                    font-size: 1.2em;
+                    color: white;
+                    width: 300px;
+                    height: 50px;
+                    margin-top: 36px;
+                    border-radius: 100px;
+                    border: none;
+                    background: linear-gradient(90deg, #D44176 0%, #9B36B4 100%);
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+                    img {
+                      height: 20px;
+                    }
+                  }
+                }
+              }
+
+              div:last-child img {
+                height: 700px;
+                background-repeat: no-repeat;
+                background-size: cover;
+              }
             }
         }
     }
@@ -96,8 +160,22 @@ section {
 
 button, a { cursor: pointer; }
 
-@media screen and (max-width:768px) {
+.text-detail {
+  background-image: linear-gradient(96.73deg, #D44176 3.15%, #9B36B4 48.7%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
 
+@media screen and (max-width:768px) {
+  #home #home-img {
+    border-radius: 0;
+
+    #home-background #home-top img {
+      height: 40px;
+    }
+  }
 }
 
 @media screen and (min-width:768px) and (max-width:992px) {
@@ -108,22 +186,21 @@ button, a { cursor: pointer; }
 }
 
 .burger {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    background: transparent;
-    cursor: pointer;
-    display: block;
-  }
-  
-  .burger input {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+
+  input {
     display: none;
   }
-  
-  .burger span {
+
+  span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 3px;
     width: 100%;
     background: black;
     border-radius: 9px;
@@ -131,38 +208,67 @@ button, a { cursor: pointer; }
     left: 0;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
+
+    &:nth-of-type(1) {
+      top: 0px;
+      transform-origin: left center;
+    }
+
+    &:nth-of-type(2) {
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: left center;
+    }
+
+    &:nth-of-type(3) {
+      top: 100%;
+      transform-origin: left center;
+      transform: translateY(-100%);
+    }
   }
-  
-  .burger span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-  
-  .burger span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-  }
-  
-  .burger span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-  
-  .burger input:checked ~ span:nth-of-type(1) {
+
+  input:checked ~ span:nth-of-type(1) {
     transform: rotate(45deg);
     top: 0px;
     left: 5px;
   }
-  
-  .burger input:checked ~ span:nth-of-type(2) {
+
+  input:checked ~ span:nth-of-type(2) {
     width: 0%;
     opacity: 0;
   }
-  
-  .burger input:checked ~ span:nth-of-type(3) {
+
+  input:checked ~ span:nth-of-type(3) {
     transform: rotate(-45deg);
     top: 28px;
     left: 5px;
   }
+}
+
+.showNav {
+  animation: showNav 0.5s ease-in-out forwards;
+}
+
+.hideNav {
+  animation: hideNav 0.5s ease-in-out forwards;
+}
+
+@keyframes showNav {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 20px;
+    display: flex;
+  }
+}
+
+@keyframes hideNav {
+  0% {
+    left: 20px;
+  }
+  100% {
+    left: -200px;
+    display: none;
+  }
+}
