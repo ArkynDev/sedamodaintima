@@ -47,9 +47,8 @@ function getData() {
     axios.get ('https://script.google.com/macros/s/AKfycbw5xDBCP4bcbT8qzvG9Hq_j2HQRuK5aQ6B62Tz9sacMD2zPxCdB-tdaWWDQXEAemdjI/exec')
     .then((Response) => {
         data = Response.data;
-        console.log(data.data);
 
-        console.log(data.Img);
+        catalog.innerHTML = '';
 
         data.data.forEach(item => {
             const i = item;
@@ -70,6 +69,7 @@ function getData() {
 
 window.addEventListener('load', (event) => {
     switchColection();
+    getData();
 });
 
 document.addEventListener('mousedown', (event) => {
