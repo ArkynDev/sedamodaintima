@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="svg/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="start()">
     <main>
         <section id="home">
             <nav id="nav" class="hideNav">
@@ -54,7 +54,13 @@
             </div>
         </section>
         <section id="catalog">
-
+            <div id="catalog-top">
+                <div>
+                    <h2>Coleção</h2>
+                    <h2 id="colectionText"></h2>
+                </div>
+                <button id="switch-colection-btn" class="button-borders">Infantil</button>
+            </div>
         </section>
     </main>
     <footer></footer>
