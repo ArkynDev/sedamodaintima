@@ -7,15 +7,15 @@
     <link rel="shortcut icon" href="svg/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="start()">
+<body>
     <main>
         <section id="home">
             <nav id="nav" class="hideNav">
                 <ul>
-                    <a href="#catalog">
+                    <a href="#catalog" onclick="toSection()">
                         <li>Catalogo</li>
                     </a>
-                    <a href="#catalog">
+                    <a href="#catalog" onclick="toSection()">
                         <li>Contato</li>
                     </a>
                 </ul>
@@ -61,9 +61,15 @@
                 </div>
                 <button id="switch-colection-btn" class="button-borders">Infantil</button>
             </div>
+            <div>
+                <div id="catalog-container">
+                    
+                </div>
+            </div>
         </section>
     </main>
     <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -2,11 +2,8 @@ const burgerInput = document.getElementById('burger');
 const nav = document.getElementById('nav');
 const colectionText = document.getElementById('colectionText');
 const switchColectionBtn = document.getElementById('switch-colection-btn');
+const catalog = document.getElementById('catalog-container');
 let infantil = true;
-
-function start() {
-    switchColection();
-}
 
 function SwitchNav() {
     if(burgerInput.checked) {
@@ -39,8 +36,41 @@ function switchColection() {
         colectionText.innerHTML = 'Adulto';
         switchColectionBtn.innerHTML ='Infantil';
     }
-    console.log(infantil);
 }
+
+function toSection() {
+    burgerInput.checked = false;
+    SwitchNav();
+}
+
+function getData() {
+    axios.get ('https://script.google.com/macros/s/AKfycbw5xDBCP4bcbT8qzvG9Hq_j2HQRuK5aQ6B62Tz9sacMD2zPxCdB-tdaWWDQXEAemdjI/exec')
+    .then((Response) => {
+        data = Response.data;
+        console.log(data.data);
+
+        console.log(data.Img);
+
+        data.data.forEach(item => {
+            const i = item;
+
+            const card = document.createElement('div');
+            card.classList.add('catalog-card');
+
+            const img = document.createElement('img');
+            img.src = item.Img;
+
+            catalog.appendChild(card);
+            card.append(img);
+        });
+    })
+    .catch((error) => console.error(error));
+}
+
+
+window.addEventListener('load', (event) => {
+    switchColection();
+});
 
 document.addEventListener('mousedown', (event) => {
     if(burgerInput.checked) {
