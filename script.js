@@ -50,17 +50,21 @@ function getData() {
 
         catalog.innerHTML = '';
 
+
         data.data.forEach(item => {
             const i = item;
 
             const card = document.createElement('div');
             card.classList.add('catalog-card');
 
-            const img = document.createElement('img');
-            img.src = item.Img;
+            const title = document.createElement('p');
+            title.innerHTML = item.Produto;
+
+            //const img = document.createElement('img');
+            //img.src = item.Img;
 
             catalog.appendChild(card);
-            card.append(img);
+            card.append(title);
         });
     })
     .catch((error) => console.error(error));
