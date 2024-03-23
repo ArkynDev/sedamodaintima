@@ -115,7 +115,7 @@ section {
   font-size: 0.9em;
   font-family: "PitangaTestRegular", Verdana, Geneva, Tahoma, sans-serif;
 }
-#home #home-img #home-background #home-content div:first-child div button {
+#home #home-img #home-background #home-content div:first-child div a {
   gap: 12px;
   color: white;
   width: 300px;
@@ -123,7 +123,7 @@ section {
   margin-top: 36px;
   background: linear-gradient(90deg, #f1528c 0%, #9B36B4 100%);
 }
-#home #home-img #home-background #home-content div:first-child div button img {
+#home #home-img #home-background #home-content div:first-child div a img {
   height: 20px;
 }
 #home #home-img #home-background #home-content div:last-child img {
@@ -135,6 +135,7 @@ section {
 #catalog {
   display: flex;
   flex-direction: column;
+  background-color: rgb(240, 240, 240);
 }
 #catalog #catalog-top {
   display: flex;
@@ -147,18 +148,21 @@ section {
   align-items: center;
   gap: 12px;
 }
+#catalog #catalog-top button {
+  padding: 6px 24px;
+  background-color: #D44176;
+  color: white;
+  border: none;
+}
 #catalog div:nth-child(2) {
   flex: 1 1 auto;
   overflow: hidden;
 }
 #catalog div:nth-child(2) #catalog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
   width: 100%;
   height: 100%;
   padding: 12px 24px;
   gap: 16px;
-  overflow-y: scroll;
 }
 #catalog div:nth-child(2) #catalog-container::-webkit-scrollbar {
   display: none;
@@ -167,7 +171,7 @@ section {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  min-width: 200px;
   height: 300px;
   background-color: white;
   border: 1px solid rgba(204, 204, 204, 0.8);
@@ -220,6 +224,62 @@ section {
   background-size: cover;
 }
 
+#about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about #about-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#about #about-container div {
+  width: 50%;
+  height: 100%;
+}
+#about #about-container #about-img {
+  display: flex;
+  position: relative;
+}
+#about #about-container #about-img img {
+  position: absolute;
+  right: 0.05%;
+  height: 100%;
+  filter: drop-shadow(-5px 3px 15px #cfcfcf);
+}
+#about #about-container #about-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+#about #about-container #about-texts h2 {
+  font-size: 2.2em;
+}
+#about #about-container #about-texts p {
+  font-size: 1.2em;
+}
+#about #about-container #about-texts #about-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100px;
+}
+#about #about-container #about-texts #about-btn a {
+  gap: 12px;
+  color: white;
+  width: 300px;
+  height: 50px;
+  margin-top: 36px;
+  background: linear-gradient(90deg, #f1528c 0%, #9B36B4 100%);
+}
+#about #about-container #about-texts #about-btn a img {
+  height: 20px;
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -232,14 +292,8 @@ footer img {
   width: auto;
 }
 footer a {
-  display: flex;
-  align-items: center;
   text-decoration: none;
   color: white;
-}
-footer a img {
-  height: 15px;
-  padding-right: 8px;
 }
 footer #footer-nav {
   display: flex;
@@ -251,6 +305,14 @@ footer #footer-social {
   display: flex;
   gap: 12px;
 }
+footer #footer-social a {
+  display: flex;
+  align-items: center;
+}
+footer #footer-social a img {
+  height: 20px;
+  padding-right: 12px;
+}
 footer #footer-social div {
   height: 24px;
   width: 2px;
@@ -258,10 +320,11 @@ footer #footer-social div {
   background-color: white;
 }
 
-button {
+.button-deco, button {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   font-family: "PitangaTestRegular", Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
   font-size: 1.2em;
@@ -296,12 +359,6 @@ button, a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: black;
-}
-
-#modal-cookie {
-  position: fixed;
-  left: 5px;
-  bottom: 5px;
 }
 
 @media screen and (max-width: 768px) {
@@ -345,11 +402,52 @@ button, a {
   #home #home-img #mobile-img #home-background #home-content div:last-child {
     display: none;
   }
+  #catalog-container {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    gap: 32px !important;
+  }
+  #catalog-container .load-card {
+    min-width: 300px !important;
+    height: 500px !important;
+  }
+  #about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #about-container div {
+    width: 100% !important;
+  }
+  #about-container #about-img img {
+    height: 110% !important;
+  }
+  #about-container #about-texts h2 {
+    font-size: 2em !important;
+  }
+  #about-container #about-texts p {
+    font-size: 1em !important;
+  }
+  #about-container #about-texts #about-btn {
+    height: 70px !important;
+  }
+  #about-container #about-texts #about-btn a {
+    width: 270px !important;
+    margin-top: 0 !important;
+  }
 }
 @media screen and (min-width: 769px) and (max-width: 1279px) {
   #home-content div:first-child div {
     padding-left: 150px !important;
     width: 600px !important;
+  }
+  #catalog-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 200px) !important;
+    overflow-y: scroll !important;
+    overflow-x: none;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1279px) and (orientation: portrait) {
@@ -392,6 +490,24 @@ button, a {
   }
   #home #home-img #mobile-img #home-background #home-content div:last-child {
     display: none;
+  }
+  #catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    overflow-y: scroll;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  #catalog-container {
+    grid-template-columns: repeat(auto-fill, 200px);
+    overflow-y: scroll;
+  }
+}
+@media screen and (min-width: 1280px) {
+  #catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    overflow-y: scroll;
   }
 }
 .burger {

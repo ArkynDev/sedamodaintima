@@ -15,8 +15,8 @@
                     <a href="#catalog" onclick="toSection()">
                         <li>Catalogo</li>
                     </a>
-                    <a href="#catalog" onclick="toSection()">
-                        <li>Contato</li>
+                    <a href="#about" onclick="toSection()">
+                        <li>Sobre</li>
                     </a>
                 </ul>
             </nav>
@@ -39,7 +39,7 @@
                                 <div>
                                     <h1><spam class="text-detail">Moda íntima</spam> de qualidade<br> para <spam class="text-detail">mulheres e crianças</spam>,<br> com estilo, conforto e<br> praticidade.</h1>
                                     <p>Descubra nossa linha de moda íntima de qualidade,<br> pensada para mulheres e crianças, oferecendo<br> estilo, conforto e praticidade incomparáveis</p>
-                                    <button class="button-borders">Fale Conosco <img src="svg/Whatsapp.svg" alt="whatsapp icon"></button>
+                                    <a class="button-borders button-deco" href="https://api.whatsapp.com/send?phone=5581981641571&text=mensagem-inicial" target="_blank">Fale Conosco <img src="svg/Whatsapp.svg" alt="whatsapp icon"></a>
                                 </div>
                             </div>
                             <div>
@@ -56,7 +56,7 @@
                     <h2>Coleção</h2>
                     <h2 id="colectionText"></h2>
                 </div>
-                <button id="switch-colection-btn" class="button-borders">Infantil</button>
+                <button id="switch-colection-btn">Infantil</button>
             </div>
             <div>
                 <div id="catalog-container">
@@ -90,6 +90,38 @@
                         <div class="load load-description"></div>
                         <div class="load load-button"></div>
                     </div>
+                    <div class="load-card">
+                        <div class="load load-title"></div>
+                        <div class="load load-img"></div>
+                        <div class="load load-description"></div>
+                        <div class="load load-button"></div>
+                    </div>
+                    <div class="load-card">
+                        <div class="load load-title"></div>
+                        <div class="load load-img"></div>
+                        <div class="load load-description"></div>
+                        <div class="load load-button"></div>
+                    </div>
+                    <div class="load-card">
+                        <div class="load load-title"></div>
+                        <div class="load load-img"></div>
+                        <div class="load load-description"></div>
+                        <div class="load load-button"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div id="about-container">
+                <div id="about-img">
+                    <img src="img/img02.png" alt="mulher seção 03">
+                </div>
+                <div id="about-texts">
+                    <h2>Descubra a <spam class="text-detail">Excelência</spam></h2>
+                    <p>Descubra nossas coleções exclusivas com as <spam class="text-detail">últimas tendências da moda<br> feminina e infantil,</spam> oferecendo uma variedade de tamanhos, cores<br> e estilos para todos os gostos. Nosso atendimento é personalizado<br> para garantir total satisfação.</p>
+                    <div id="about-btn">
+                        <a class="button-borders button-deco" href="https://api.whatsapp.com/send?phone=5581981641571&text=mensagem-inicial" target="_blank">Fale Conosco <img src="svg/Whatsapp.svg" alt="whatsapp icon"></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -99,12 +131,12 @@
         <div id="footer-nav">
             <a href="#home">Inicio</a>
             <a href="#catalog">Catalogo</a>
-            <a href="">Sobre</a>
+            <a href="#about">Sobre</a>
         </div>
         <div id="footer-social">
-            <a href=""><img src="svg/Whatsapp.svg" alt="whatsapp"> <spam>Whatsapp</spam></a>
+            <a href=""><img src="svg/Whatsapp.svg" alt="whatsapp Link"> <spam>Whatsapp</spam></a>
             <div></div>
-            <a href="">Instagram</a>
+            <a href=""><img src="svg/Instagram.svg" alt="Instagram Link"><spam>Instagram</spam></a>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -73,7 +73,7 @@ function getData() {
 
 window.addEventListener('load', (event) => {
     switchColection();
-    getData();
+    //getData();
 });
 
 document.addEventListener('mousedown', (event) => {
