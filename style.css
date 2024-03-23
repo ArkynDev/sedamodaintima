@@ -301,6 +301,9 @@ footer #footer-nav {
   font-size: 1.4em;
   padding: 24px 0px;
 }
+footer #footer-nav a:hover {
+  text-decoration: underline !important;
+}
 footer #footer-social {
   display: flex;
   gap: 12px;
