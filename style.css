@@ -122,6 +122,13 @@ section {
   height: 50px;
   margin-top: 36px;
   background: linear-gradient(90deg, #f1528c 0%, #9B36B4 100%);
+  transition: 0.2s ease;
+}
+#home #home-img #home-background #home-content div:first-child div a:hover {
+  box-shadow: #f1528c 0px 5px 15px;
+}
+#home #home-img #home-background #home-content div:first-child div a:active {
+  scale: 0.9;
 }
 #home #home-img #home-background #home-content div:first-child div a img {
   height: 20px;
@@ -275,6 +282,13 @@ section {
   height: 50px;
   margin-top: 36px;
   background: linear-gradient(90deg, #f1528c 0%, #9B36B4 100%);
+  transition: 0.2s ease;
+}
+#about #about-container #about-texts #about-btn a:hover {
+  box-shadow: #f1528c 0px 5px 15px;
+}
+#about #about-container #about-texts #about-btn a:active {
+  scale: 0.9;
 }
 #about #about-container #about-texts #about-btn a img {
   height: 20px;
