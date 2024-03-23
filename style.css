@@ -423,6 +423,9 @@ button, a {
   #about-container #about-img img {
     height: 110% !important;
   }
+  #about-container #about-texts {
+    padding: 0px 24px;
+  }
   #about-container #about-texts h2 {
     font-size: 2em !important;
   }
